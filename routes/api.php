@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::prefix('/trends')->group(realpath(__DIR__ . '/api/trends.php'));
+Route::prefix('/movies')->group(realpath(__DIR__ . '/api/movies.php'));
