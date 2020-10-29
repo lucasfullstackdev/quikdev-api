@@ -31,8 +31,13 @@ class MoviesController extends Controller
         return $this->trendsRepository->get();
     }
 
+    public function genre($id)
+    {
+        return $this->moviesRepository->findByGenre($id);
+    }
+
     public function show($id)
     {
-        return 'listar dados do filme selecionado';
+        return  $this->moviesRepository->find($id);
     }
 }

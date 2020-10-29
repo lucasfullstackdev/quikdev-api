@@ -29,6 +29,7 @@ class TMDBRepository
     {
         $this->prepUrl();
 
+        // return $this->urlRequest;
         $response = Http::get($this->urlRequest);
         return Response::bind($response);
     }
