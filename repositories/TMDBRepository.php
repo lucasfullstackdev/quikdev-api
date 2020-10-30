@@ -29,14 +29,13 @@ class TMDBRepository
     {
         $this->prepUrl();
 
-        // return $this->urlRequest;
         $response = Http::get($this->urlRequest);
         return Response::bind($response);
     }
 
     private function prepUrl()
     {
-        $this->urlRequest = "$this->apiUrl/$this->endPoint?api_key=$this->apiKey";
+        $this->urlRequest = "$this->apiUrl/$this->endPoint?api_key=$this->apiKey&language=pt-BR";
         if ($this->params) {
             $this->urlRequest .= "&$this->params";
         }
