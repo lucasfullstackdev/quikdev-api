@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/trends')->group(realpath(__DIR__ . '/api/trends.php'));
 Route::prefix('/movies')->group(realpath(__DIR__ . '/api/movies.php'));
+Route::prefix('/genres')->group(realpath(__DIR__ . '/api/genres.php'));
