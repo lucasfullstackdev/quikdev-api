@@ -44,4 +44,10 @@ final class MoviesRepository extends TMDBRepository
         $this->endPoint = "movie/$id";
         return $this->get();
     }
+
+    public function casts($id)
+    {
+        $this->endPoint = "movie/$id/casts";
+        return $this->get();
+    }
 }

@@ -40,4 +40,9 @@ class MoviesController extends Controller
     {
         return  $this->moviesRepository->find($id);
     }
+
+    public function casts($id)
+    {
+        return $this->moviesRepository->casts($id);
+    }
 }
