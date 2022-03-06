@@ -1,61 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+
+<p align="center"><img src="https://laravel.com/img/logomark.min.svg" width="100"></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
+<br><br><br>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<h1 align="center">The Movie Database (Back-end)</h1>
+<h4 align="center">Uma API desenvolvida para integrar com uma API externa</h4>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Sobre o projeto
+Este projeto tem como finalidade atestar meu conhecimento e experiência com desenvolvimento [PHP](https://www.php.net/manual/pt_BR/intro-whatis.php), utilizando com framework o [LARAVEL](https://laravel.com/) em sua versão mais recente [8x](https://laravel.com/docs/8.x/releases). Este projeto engloba pontos como [rotas](https://laravel.com/docs/8.x/routing), orientação a objetos e padrões de projeto como o [Repository](https://medium.com/laraveltips/voc%C3%AA-entende-repository-pattern-voc%C3%AA-est%C3%A1-certo-disso-d739ecaf544e).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Sobre as Api's utilizadas
+- Todas as api's utilizadas nesta aplicação podem ser encontradas facilmente na internet, bem como a sua documentação
+- Segue lista de Api's utilizadas
+   - [the movie database](https://developers.themoviedb.org/3)
+   
+## Por que este projeto?
+Este projeto faz parte do meu portfólio pessoal, uma maneira de comprovar meus conhecimentos em LARAVEL.
 
-## Learning Laravel
+# Sobre as Rotas
+## Filmes
+```php
+Method: GET
+Url: http://127.0.0.1:1350/api/movies
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Para listar todos os filmes mais procurados
+```
+```php
+Method: GET
+Url: http://127.0.0.1:1350/api/movies/{id}
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Para listar detalhes de um filme em específico
+```
+```php
+Method: GET
+Url: http://127.0.0.1:1350/api/movies/genre/{id}
 
-## Laravel Sponsors
+- Para listar os filmes filtrados por gênero
+```
+```php
+Method: GET
+Url: http://127.0.0.1:1350/api/movies/{id}/casts
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Para listar o elenco do filme selecionado
+```
+## Gêneros
+```php
+Method: GET
+Url: http://127.0.0.1:1350/api/genres
 
-### Premium Partners
+- Para listar todos os gêneros disponíveis
+```
+## Setup
+1. Instale o [composer](https://getcomposer.org/download/)
+2. Clone o repositório com o comando `git clone`
+3. Acesse o diretório raiz do projeto e rode o comando `composer install`
+4. Após a instalação de todas as dependências necessárias, execute o comando `php artisan serve --port 1350`
+8. O projeto deve estar disponível no endereco: [localhost:1350](http://localhost:1350/) 
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Considerações finais
+Qualquer dúvida ou sugestão, entre em contato pelo e-mail: lucas.fullstack.dev@gmail.com
